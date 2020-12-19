@@ -52,4 +52,4 @@ DM include polyuria, polydipsia, and significant weight loss among others.
 
 
 
-**Type 2 diabetes begins with insulin resistance, a condition in which cells fail to respond to insulin properly.
+**Type 2 diabetes begins with insulin resistance, a condition in which cells fail to respond to insulin properly.**
