@@ -36,10 +36,7 @@ train_sizes=np.linspace(.1, 1.0, 5)):
  plt.legend(loc="best")
  return plt
  
- def plot_confusion_matrix(cm, classes,
- normalize=False,
- title='Confusion matrix',
- cmap=plt.cm.Blues):
+ def plot_confusion_matrix(cm, classes,normalize=False, title='Confusion matrix', cmap=plt.cm.Blues):
  plt.imshow(cm, interpolation='nearest', cmap=cmap)
  plt.title(title)
  plt.colorbar()
@@ -49,7 +46,7 @@ train_sizes=np.linspace(.1, 1.0, 5)):
  fmt = '.2f' if normalize else 'd'
  thresh = cm.max() / 2.
  for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
- plt.text(j, i, format(cm[i, j], fmt),
+  plt.text(j, i, format(cm[i, j], fmt),
  horizontalalignment="center",
  color="white" if cm[i, j] > thresh else "black")
  plt.tight_layout()
@@ -72,13 +69,12 @@ train_sizes=np.linspace(.1, 1.0, 5)):
  models.append(('DTC', DecisionTreeClassifier()))
  models.append(('GBC', GradientBoostingClassifier()))
  for name, model in models:
- model.fit(a, b)
+  model.fit(a, b)
  kfold = model_selection.KFold(n_splits=10, random_state=7)
  accuracy_results = model_selection.cross_val_score(model, a,b, cv=kfold,scoring='accuracy')
  resultsAccuracy.append(accuracy_results)
  names.append(name)
- accuracyMessage = "%s: %f (%f)" % (name, accuracy_results.mean(),
-accuracy_results.std())
+ accuracyMessage = "%s: %f (%f)" % (name, accuracy_results.mean(),accuracy_results.std())
  print(accuracyMessage)
  # Boxplot
  
@@ -99,9 +95,7 @@ def defineModels():
  print('GNB = GaussianNB')
  print('DTC = DecisionTreeClassifier')
  print('GBC = GradientBoostingClassifier \n\n')
-names = ["Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
- "Decision Tree", "Random Forest", "MLPClassifier", "AdaBoost",
- "Naive Bayes", "QDA"]
+names = ["Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process", "Decision Tree", "Random Forest", "MLPClassifier", "AdaBoost","Naive Bayes", "QDA"]
 classifiers = [
  KNeighborsClassifier(),
  SVC(kernel="linear"),
@@ -128,10 +122,8 @@ def plotHistogram(values,label,feature,title):
  plotOne.fig.suptitle(title)
  plt.show()
  
-plotHistogram(dataset,"Outcome",'Insulin','Insulin vs Diagnosis (Blue = Healthy;
-Orange = Diabetes)')
-plotHistogram(dataset,"Outcome",'SkinThickness','SkinThickness vs Diagnosis (Blue
-= Healthy; Orange = Diabetes)')
+plotHistogram(dataset,"Outcome",'Insulin','Insulin vs Diagnosis (Blue = Healthy;Orange = Diabetes)')
+plotHistogram(dataset,"Outcome",'SkinThickness','SkinThickness vs Diagnosis (Blue= Healthy; Orange = Diabetes)')
 dataset2 = dataset.iloc[:, :-1]
 print("# of Rows, # of Columns: ",dataset2.shape)
 print("\nColumn Name # of Null Values\n")
