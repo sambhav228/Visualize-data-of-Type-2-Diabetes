@@ -127,6 +127,7 @@ def plotHistogram(values,label,feature,title):
  plotOne.set_axis_labels(feature, 'Proportion')
  plotOne.fig.suptitle(title)
  plt.show()
+ 
 plotHistogram(dataset,"Outcome",'Insulin','Insulin vs Diagnosis (Blue = Healthy;
 Orange = Diabetes)')
 plotHistogram(dataset,"Outcome",'SkinThickness','SkinThickness vs Diagnosis (Blue
